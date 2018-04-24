@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript">
+        constants = {
+            page: '@Url.RouteUrl("DefaultApi", new {controller = "Autor", action = "page" })',
+            index: '@Url.RouteUrl("DefaultApi", new {controller = "Home", action = "Index" })'
+        }
+    </script>
+    <link href="~/css/styles.css" rel="stylesheet" media="all">
+    <title>Self Publisher</title>
+</head>
+<body>
+    <div id="content">
+    </div>
+    <script type="text/javascript" src="@Url.Content("~/assets/bundle.js")"></script>
+</body>
+</html>
