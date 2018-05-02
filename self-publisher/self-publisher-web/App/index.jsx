@@ -1,8 +1,20 @@
-﻿import React from 'react' 
-import { render } from 'react-dom' 
+﻿import React from 'react'
+import { render } from 'react-dom'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 import App from './containers/app.jsx'
+import autorReducer from './containers/autor/autorReducer.jsx'
+
+function configureStore(initialState) {
+    return createStore(autorReducer, initialState, applyMiddleware(thunk))
+}
+
+const store = configureStore()
 
 render(
-    <App />,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById('content')
 )

@@ -11,7 +11,7 @@ using System;
 namespace Publisher.DB.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20180423133642_InitialCreate")]
+    [Migration("20180502161320_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

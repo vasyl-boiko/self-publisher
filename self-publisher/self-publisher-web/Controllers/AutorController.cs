@@ -21,5 +21,12 @@ namespace SelfPublisher.Web.Controllers
         {
             return await _autorRepository.GetAutors(pageIndex, 10);
         }
+
+        [Route("autor")]
+        [HttpGet]
+        public async Task<User> GetUser(int userId)
+        {
+            return await _autorRepository.GetAutor(userId);
+        }
     }
 }
