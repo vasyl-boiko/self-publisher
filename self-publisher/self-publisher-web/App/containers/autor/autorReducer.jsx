@@ -8,7 +8,7 @@ const initialState = {
 export default function autor(state = initialState, action) {
     switch (action.type) {
         case GET_AUTORS_SUCCESS:
-            return { ...state, data: action.autors, error: '' }
+            return { ...state, data: action.payload, error: '' }
 
         case GET_AUTORS_ERROR:
             return { ...state, error: action.error }

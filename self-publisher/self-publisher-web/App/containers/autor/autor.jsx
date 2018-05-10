@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import ReactDOM from 'react-dom';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getAutors } from './autorActions.jsx'
 
@@ -30,14 +31,14 @@ class Autor extends React.Component {
 
 let mapProps = (state) => {
     return {
-        autors: state.data,
-        error: state.error
+        autors: state.autor.data,
+        error: state.autor.error
     }
 }
 
 let mapDispatch = (dispatch) => {
     return {
-        getAutors: (index) => dispatch(getAutors(index))
+        getAutors: bindActionCreators(getAutors, dispatch)
     }
 }
 

@@ -1,20 +1,6 @@
 ﻿import { GET_AUTORS_SUCCESS, GET_AUTORS_ERROR } from './autorConstants.jsx'
 import "isomorphic-fetch"
 
-export function receiveAutors(data) {
-    return {
-        type: GET_AUTORS_SUCCESS,
-        autors: data
-    }
-}
-
-export function errorReceive(err) {
-    return {
-        type: GET_AUTORS_ERROR,
-        error: err
-    }
-}
-
 export function getAutors(pageIndex = 0) {
     return (dispatch) => {
         let queryTrailer = '?pageIndex=' + pageIndex;
@@ -22,9 +8,9 @@ export function getAutors(pageIndex = 0) {
             .then((response) => {
                 return response.json()
             }).then((data) => {
-                dispatch(receiveAutors(data))
+                dispatch({ type: GET_AUTORS_SUCCESS, payload: data })
             }).catch((ex) => {
-                dispatch(errorReceive(ex))
+                dispatch({ type: GET_AUTORS_ERROR, payload: ex })
             });
     }
 }

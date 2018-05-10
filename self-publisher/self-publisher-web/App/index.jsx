@@ -4,10 +4,10 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import App from './containers/app.jsx'
-import autorReducer from './containers/autor/autorReducer.jsx'
+import rootReducer from './reducers/rootReducer.jsx'
 
 function configureStore(initialState) {
-    return createStore(autorReducer, initialState, applyMiddleware(thunk))
+    return createStore(rootReducer, initialState, applyMiddleware(thunk));
 }
 
 const store = configureStore()
